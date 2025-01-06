@@ -1,2 +1,0 @@
-# motor_shop
-Web
