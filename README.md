@@ -118,9 +118,9 @@ http://localhost:8000
 
 ### Endpoint Aksesori
 
-- GET `/accessories` - Mengambil patkan semua data aksesoris
+- GET `/accessories` - Mengambil semua data aksesoris
 - POST `/accessories` - Menambah aksesoris baru
-- GET `/accessories/{id}` - Mengambil patkan detail aksesoris berdasarkan ID
+- GET `/accessories/{id}` - Mengambil detail aksesoris berdasarkan ID
 - PUT `/accessories/{id}` - Mengupdate data aksesoris
 - DELETE `/accessories/{id}` - Menghapus data aksesoris
 
