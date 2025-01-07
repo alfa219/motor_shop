@@ -48,7 +48,7 @@ venv\Scripts\activate     # untuk Windows
 
 3. Install dependensi
 ```bash
-pip install flask flask-restx mysql-connector-python requests
+pip pip install -r requirements.txt
 ```
 
 4. Siapkan database MySQL
