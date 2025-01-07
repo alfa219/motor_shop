@@ -35,7 +35,7 @@ Motor Shop API adalah sistem manajemen untuk toko motor yang memungkinkan penggu
 
 1. Clone repository ini
 ```bash
-git clone [URL_REPOSITORY]
+git clone [https://github.com/alfa219/motor_shop.git]
 cd motor-shop-api
 ```
 
