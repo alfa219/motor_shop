@@ -15,12 +15,12 @@ Motor Shop API adalah sistem manajemen untuk toko motor yang memungkinkan penggu
   - Mengupdate data motor
   - Menghapus data motor
 
-- Manajemen data aksesori (CRUD)
-  - Menambah data aksesori baru
-  - Melihat semua data aksesori
+- Manajemen data aksesoris (CRUD)
+  - Menambah data aksesoris baru
+  - Melihat semua data aksesoris
   - Melihat detail aksesori berdasarkan ID
-  - Mengupdate data aksesori
-  - Menghapus data aksesori
+  - Mengupdate data aksesoris
+  - Menghapus data aksesoris
 
 ## Teknologi yang Digunakan
 
@@ -109,20 +109,19 @@ http://localhost:8000
 
 ### Endpoint Motor
 
-- GET `/motors` - Mendapatkan semua data motor
-- POST `/motors` - Menambah motor baru
-- GET `/motors/{id}` - Mendapatkan detail motor berdasarkan ID
-- PUT `/motors/{id}` - Mengupdate data motor
-- DELETE `/motors/{id}` - Menghapus data motor
+GET /motors - Mengambil semua data motor
+POST /motors - Menambah motor baru
+GET /motors/{id} - Mengambil detail motor berdasarkan ID
+PUT /motors/{id} - Mengupdate data motor
+DELETE /motors/{id} - Menghapus data motor
 
 ### Endpoint Aksesori
 
-- GET `/accessories` - Mendapatkan semua data aksesori
-- POST `/accessories` - Menambah aksesori baru
-- GET `/accessories/{id}` - Mendapatkan detail aksesori berdasarkan ID
-- PUT `/accessories/{id}` - Mengupdate data aksesori
-- DELETE `/accessories/{id}` - Menghapus data aksesori
-
+GET /accessories - Mengambil semua data aksesori
+POST /accessories - Menambah aksesori baru
+GET /accessories/{id} - Mengambil detail aksesori berdasarkan ID
+PUT /accessories/{id} - Mengupdate data aksesori
+DELETE /accessories/{id} - Menghapus data aksesori
 
 
 
