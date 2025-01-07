@@ -1,7 +1,8 @@
 from flask import Flask, jsonify, request, abort
+from flasgger import Swagger
 import mysql.connector
 
-# Database Configuration
+# Konfigurasi Database
 db_config = {
     "host": "localhost",
     "user": "root",
@@ -9,18 +10,20 @@ db_config = {
     "database": "motor_shop"
 }
 
-# Initialize Flask app
+# Inisialisasi Flask
 app = Flask(__name__)
+Swagger(app)
 
-# Database Connection
+# Fungsi koneksi database
 def get_db_connection():
     return mysql.connector.connect(**db_config)
 
+# Endpoint untuk menambahkan motor
 @app.route("/motors", methods=["POST"])
 def create_motor():
     data = request.json
     required_fields = ["name", "brand", "category", "engine_capacity", "year_of_production", "price"]
-    
+
     if not all(field in data for field in required_fields):
         abort(400, "Missing required fields")
 
@@ -40,6 +43,7 @@ def create_motor():
     connection.close()
     return jsonify({**data, "id": motor_id}), 201
 
+# Endpoint untuk mendapatkan semua data motor
 @app.route("/motors", methods=["GET"])
 def get_all_motors():
     connection = get_db_connection()
@@ -50,6 +54,7 @@ def get_all_motors():
     connection.close()
     return jsonify(motors)
 
+# Endpoint untuk mendapatkan detail motor berdasarkan ID
 @app.route("/motors/<int:motor_id>", methods=["GET"])
 def get_motor(motor_id):
     connection = get_db_connection()
@@ -62,11 +67,12 @@ def get_motor(motor_id):
         abort(404, "Motor not found")
     return jsonify(motor)
 
+# Endpoint untuk mengupdate data motor
 @app.route("/motors/<int:motor_id>", methods=["PUT"])
 def update_motor(motor_id):
     data = request.json
     required_fields = ["name", "brand", "category", "engine_capacity", "year_of_production", "price"]
-    
+
     if not all(field in data for field in required_fields):
         abort(400, "Missing required fields")
 
@@ -91,6 +97,7 @@ def update_motor(motor_id):
     connection.close()
     return jsonify({**data, "id": motor_id})
 
+# Endpoint untuk menghapus data motor
 @app.route("/motors/<int:motor_id>", methods=["DELETE"])
 def delete_motor(motor_id):
     connection = get_db_connection()
@@ -107,6 +114,7 @@ def delete_motor(motor_id):
     connection.close()
     return jsonify({"message": "Motor deleted successfully"})
 
+# Endpoint untuk menambahkan aksesori
 @app.route("/accessories", methods=["POST"])
 def create_accessory():
     data = request.json
@@ -130,6 +138,7 @@ def create_accessory():
     connection.close()
     return jsonify({**data, "id": accessory_id}), 201
 
+# Endpoint untuk mendapatkan semua data aksesori
 @app.route("/accessories", methods=["GET"])
 def get_all_accessories():
     connection = get_db_connection()
@@ -140,6 +149,7 @@ def get_all_accessories():
     connection.close()
     return jsonify(accessories)
 
+# Endpoint untuk mendapatkan detail aksesori berdasarkan ID
 @app.route("/accessories/<int:accessory_id>", methods=["GET"])
 def get_accessory(accessory_id):
     connection = get_db_connection()
@@ -152,6 +162,7 @@ def get_accessory(accessory_id):
         abort(404, "Accessory not found")
     return jsonify(accessory)
 
+# Endpoint untuk mengupdate data aksesori
 @app.route("/accessories/<int:accessory_id>", methods=["PUT"])
 def update_accessory(accessory_id):
     data = request.json
@@ -179,6 +190,7 @@ def update_accessory(accessory_id):
     connection.close()
     return jsonify({**data, "id": accessory_id})
 
+# Endpoint untuk menghapus data aksesori
 @app.route("/accessories/<int:accessory_id>", methods=["DELETE"])
 def delete_accessory(accessory_id):
     connection = get_db_connection()
@@ -195,5 +207,6 @@ def delete_accessory(accessory_id):
     connection.close()
     return jsonify({"message": "Accessory deleted successfully"})
 
+# Menjalankan server
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=8000, debug=True)
