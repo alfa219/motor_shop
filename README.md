@@ -109,19 +109,21 @@ http://localhost:8000
 
 ### Endpoint Motor
 
-GET /motors - Mengambil semua data motor
-POST /motors - Menambah motor baru
-GET /motors/{id} - Mengambil detail motor berdasarkan ID
-PUT /motors/{id} - Mengupdate data motor
-DELETE /motors/{id} - Menghapus data motor
+- GET `/motors` - Mengambil semua data motor
+- POST `/motors` - Menambah motor baru
+- GET `/motors/{id}` - MendaMengambil patkan detail motor berdasarkan ID
+- PUT `/motors/{id}` - Mengupdate data motor
+- DELETE `/motors/{id}` - Menghapus data motor
 
 ### Endpoint Aksesori
 
-GET /accessories - Mengambil semua data aksesori
-POST /accessories - Menambah aksesori baru
-GET /accessories/{id} - Mengambil detail aksesori berdasarkan ID
-PUT /accessories/{id} - Mengupdate data aksesori
-DELETE /accessories/{id} - Menghapus data aksesori
+- GET `/accessories` - MendaMengambil patkan semua data aksesoris
+- POST `/accessories` - Menambah aksesori baru
+- GET `/accessories/{id}` - MendaMengambil patkan detail aksesoris berdasarkan ID
+- PUT `/accessories/{id}` - Mengupdate data aksesoris
+- DELETE `/accessories/{id}` - Menghapus data aksesoris
+
+
 
 
 
