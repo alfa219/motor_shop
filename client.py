@@ -10,7 +10,6 @@ def print_response(response):
     else:
         print(f"Error {response.status_code}: {response.text}")
 
-# Motor-related operations
 def create_motor():
     """Create a new motor."""
     print("\nEnter motor details:")
@@ -18,27 +17,26 @@ def create_motor():
     brand = input("Brand: ")
     category = input("Category (Sport/Matic/Bebek): ")
     
-    # Handling invalid input for engine_capacity
     while True:
         try:
             engine_capacity = int(input("Engine Capacity (cc): "))
-            break  # exit loop if valid input
+            break  
         except ValueError:
             print("Invalid input. Engine capacity must be an integer. Please try again.")
     
-    # Handling invalid input for year_of_production
+ 
     while True:
         try:
             year_of_production = int(input("Year of Production: "))
-            break  # exit loop if valid input
+            break 
         except ValueError:
             print("Invalid input. Year of production must be an integer. Please try again.")
     
-    # Handling invalid input for price
+
     while True:
         try:
             price = float(input("Price: "))
-            break  # exit loop if valid input
+            break  
         except ValueError:
             print("Invalid input. Price must be a number. Please try again.")
     
@@ -63,7 +61,7 @@ def get_motor_by_id():
     while True:
         try:
             motor_id = int(input("Enter Motor ID: "))
-            break  # exit loop if valid input
+            break 
         except ValueError:
             print("Invalid input. Motor ID must be an integer. Please try again.")
     
@@ -75,7 +73,7 @@ def update_motor():
     while True:
         try:
             motor_id = int(input("Enter Motor ID to update: "))
-            break  # exit loop if valid input
+            break  
         except ValueError:
             print("Invalid input. Motor ID must be an integer. Please try again.")
     
@@ -84,27 +82,27 @@ def update_motor():
     brand = input("Brand: ")
     category = input("Category (Sport/Matic/Bebek): ")
     
-    # Handling invalid input for engine_capacity
+ 
     while True:
         try:
             engine_capacity = int(input("Engine Capacity (cc): "))
-            break  # exit loop if valid input
+            break 
         except ValueError:
             print("Invalid input. Engine capacity must be an integer. Please try again.")
     
-    # Handling invalid input for year_of_production
+
     while True:
         try:
             year_of_production = int(input("Year of Production: "))
-            break  # exit loop if valid input
+            break 
         except ValueError:
             print("Invalid input. Year of production must be an integer. Please try again.")
     
-    # Handling invalid input for price
+
     while True:
         try:
             price = float(input("Price: "))
-            break  # exit loop if valid input
+            break  
         except ValueError:
             print("Invalid input. Price must be a number. Please try again.")
     
@@ -124,14 +122,14 @@ def delete_motor():
     while True:
         try:
             motor_id = int(input("Enter Motor ID to delete: "))
-            break  # exit loop if valid input
+            break
         except ValueError:
             print("Invalid input. Motor ID must be an integer. Please try again.")
     
     response = requests.delete(f"{API_BASE_URL}/motors/{motor_id}")
     print_response(response)
 
-# Accessory-related operations
+
 def create_accessory():
     """Create a new accessory."""
     print("\nEnter accessory details:")
@@ -139,11 +137,11 @@ def create_accessory():
     type = input("Type (e.g., Helmet, Gloves): ")
     description = input("Description: ")
     
-    # Handling invalid input for price
+
     while True:
         try:
             price = float(input("Price: "))
-            break  # exit loop if valid input
+            break 
         except ValueError:
             print("Invalid input. Price must be a number. Please try again.")
     
@@ -166,7 +164,7 @@ def get_accessory_by_id():
     while True:
         try:
             accessory_id = int(input("Enter Accessory ID: "))
-            break  # exit loop if valid input
+            break  
         except ValueError:
             print("Invalid input. Accessory ID must be an integer. Please try again.")
     
@@ -178,7 +176,7 @@ def update_accessory():
     while True:
         try:
             accessory_id = int(input("Enter Accessory ID to update: "))
-            break  # exit loop if valid input
+            break 
         except ValueError:
             print("Invalid input. Accessory ID must be an integer. Please try again.")
     
@@ -187,11 +185,11 @@ def update_accessory():
     type = input("Type (e.g., Helmet, Gloves): ")
     description = input("Description: ")
     
-    # Handling invalid input for price
+
     while True:
         try:
             price = float(input("Price: "))
-            break  # exit loop if valid input
+            break  
         except ValueError:
             print("Invalid input. Price must be a number. Please try again.")
     
@@ -209,7 +207,7 @@ def delete_accessory():
     while True:
         try:
             accessory_id = int(input("Enter Accessory ID to delete: "))
-            break  # exit loop if valid input
+            break  
         except ValueError:
             print("Invalid input. Accessory ID must be an integer. Please try again.")
     

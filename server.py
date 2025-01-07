@@ -4,23 +4,21 @@ import mysql.connector
 from decimal import Decimal
 import json
 
-# Custom JSON Encoder untuk menangani tipe Decimal
+
 class CustomJSONEncoder(json.JSONEncoder):
     def default(self, obj):
         if isinstance(obj, Decimal):
             return float(obj)
         return super().default(obj)
 
-# Setup Flask App
+
 app = Flask(__name__)
-app.json_encoder = CustomJSONEncoder  # Menggunakan encoder kustom
+app.json_encoder = CustomJSONEncoder  
 api = Api(app, version="1.0", title="Motor Shop API", description="API untuk mengelola motor dan aksesori")
 
-# Namespace
 motor_ns = api.namespace("motors", description="Operasi motor")
 accessory_ns = api.namespace("accessories", description="Operasi aksesori")
 
-# Konfigurasi Database
 db_config = {
     "host": "localhost",
     "user": "root",
@@ -28,11 +26,9 @@ db_config = {
     "database": "motor_shop"
 }
 
-# Fungsi untuk koneksi ke database
 def get_db_connection():
     return mysql.connector.connect(**db_config)
 
-# Model untuk Motor
 motor_model = motor_ns.model("Motor", {
     "id": fields.Integer(readOnly=True),
     "name": fields.String(required=True),
@@ -43,7 +39,6 @@ motor_model = motor_ns.model("Motor", {
     "price": fields.Float(required=True),
 })
 
-# Model untuk Aksesori
 accessory_model = accessory_ns.model("Accessory", {
     "id": fields.Integer(readOnly=True),
     "name": fields.String(required=True),
@@ -52,7 +47,6 @@ accessory_model = accessory_ns.model("Accessory", {
     "price": fields.Float(required=True),
 })
 
-# Rute untuk Motor
 @motor_ns.route("/")
 class MotorList(Resource):
     @motor_ns.response(200, "Berhasil")
@@ -66,7 +60,7 @@ class MotorList(Resource):
             cursor.close()
             connection.close()
 
-            # Mengonversi Decimal ke float
+
             for motor in motors:
                 for key, value in motor.items():
                     if isinstance(value, Decimal):
@@ -173,7 +167,7 @@ class Motor(Resource):
         except Exception as e:
             return {"error": str(e)}, 500
 
-# Rute untuk Aksesori (mirip dengan Motor)
+
 @accessory_ns.route("/")
 class AccessoryList(Resource):
     @accessory_ns.response(200, "Berhasil")
@@ -187,7 +181,7 @@ class AccessoryList(Resource):
             cursor.close()
             connection.close()
 
-            # Mengonversi Decimal ke float
+   
             for accessory in accessories:
                 for key, value in accessory.items():
                     if isinstance(value, Decimal):
@@ -238,7 +232,6 @@ class Accessory(Resource):
             if accessory is None:
                 return {"message": "Aksesori tidak ditemukan"}, 404
 
-            # Mengonversi Decimal ke float
             for key, value in accessory.items():
                 if isinstance(value, Decimal):
                     accessory[key] = float(value)
@@ -291,6 +284,5 @@ class Accessory(Resource):
         except Exception as e:
             return {"error": str(e)}, 500
 
-# Jalankan aplikasi Flask
 if __name__ == "__main__":
     app.run(debug=True, host="0.0.0.0", port=8000)
