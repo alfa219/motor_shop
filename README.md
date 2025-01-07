@@ -107,22 +107,22 @@ http://localhost:8000
 
 ## Struktur API
 
+
 ### Endpoint Motor
 
 - GET `/motors` - Mengambil semua data motor
 - POST `/motors` - Menambah motor baru
-- GET `/motors/{id}` - MendaMengambil patkan detail motor berdasarkan ID
+- GET `/motors/{id}` - Mengambil patkan detail motor berdasarkan ID
 - PUT `/motors/{id}` - Mengupdate data motor
 - DELETE `/motors/{id}` - Menghapus data motor
 
 ### Endpoint Aksesori
 
-- GET `/accessories` - MendaMengambil patkan semua data aksesoris
-- POST `/accessories` - Menambah aksesori baru
-- GET `/accessories/{id}` - MendaMengambil patkan detail aksesoris berdasarkan ID
+- GET `/accessories` - Mengambil patkan semua data aksesoris
+- POST `/accessories` - Menambah aksesoris baru
+- GET `/accessories/{id}` - Mengambil patkan detail aksesoris berdasarkan ID
 - PUT `/accessories/{id}` - Mengupdate data aksesoris
 - DELETE `/accessories/{id}` - Menghapus data aksesoris
-
 
 
 
