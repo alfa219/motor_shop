@@ -1,10 +1,10 @@
 # Motor Shop API
 
-Aplikasi REST API untuk manajemen toko motor dan aksesori menggunakan Flask dan MySQL.
+Aplikasi REST API untuk manajemen toko motor dan aksesoris menggunakan Flask dan MySQL.
 
 ## Deskripsi
 
-Motor Shop API adalah sistem manajemen untuk toko motor yang memungkinkan pengguna untuk mengelola data motor dan aksesoris. API ini dibangun menggunakan Flask-RESTX dan MySQL sebagai database. Sistem ini menyediakan endpoint untuk operasi CRUD (Create, Read, Update, Delete) pada data motor dan aksesori.
+Motor Shop API adalah sistem manajemen untuk toko motor yang memungkinkan pengguna untuk mengelola data motor dan aksesoris. API ini dibangun menggunakan Flask-RESTX dan MySQL sebagai database. Sistem ini menyediakan endpoint untuk operasi CRUD (Create, Read, Update, Delete) pada data motor dan aksesoris.
 
 ## Fitur
 
@@ -18,7 +18,7 @@ Motor Shop API adalah sistem manajemen untuk toko motor yang memungkinkan penggu
 - Manajemen data aksesoris (CRUD)
   - Menambah data aksesoris baru
   - Melihat semua data aksesoris
-  - Melihat detail aksesori berdasarkan ID
+  - Melihat detail aksesoris berdasarkan ID
   - Mengupdate data aksesoris
   - Menghapus data aksesoris
 
