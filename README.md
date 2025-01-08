@@ -1,3 +1,8 @@
+
+wildan alfa raezel (23.83.1001)
+Muhammad Alba Hidayatullah ( 23.83.1034)
+
+
 # Motor Shop API
 
 Aplikasi REST API untuk manajemen toko motor dan aksesoris menggunakan Flask dan MySQL.
