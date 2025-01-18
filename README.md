@@ -91,7 +91,7 @@ db_config = {
 
 1. Jalankan server API
 ```bash
-python app.py
+py server.py
 ```
 Server akan berjalan di `http://localhost:8000`
 
